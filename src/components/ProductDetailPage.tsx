@@ -8,7 +8,69 @@ import {
   ZoomIn, ZoomOut, Maximize2, X, RotateCcw, ChevronLeft
 } from 'lucide-react';
 import { PRODUCTS_DATA, ProductData } from '../data/productsData';
+import { ALL_PRODUCTS } from './AllProductsPage';
 import { submitQuotationRequest } from '../services/quotationService';
+
+function getDynamicProductData(slugKey: string): ProductData | undefined {
+  const match = ALL_PRODUCTS.find((p) => p.slug === slugKey);
+  if (!match) return undefined;
+
+  const primaryCat = Array.isArray(match.categories) && match.categories.length > 0 ? match.categories[0] : match.category;
+
+  return {
+    slug: match.slug,
+    name: match.name,
+    h1: `${match.name} Printing`,
+    category: primaryCat,
+    seoTitle: `${match.name} Printing Services | Printopia Solutions`,
+    metaDescription: `High-quality ${match.name.toLowerCase()} printing solutions for ${primaryCat.toLowerCase()} institutions and businesses by Printopia Solutions. Custom sizes, paper options, and bulk pricing.`,
+    image: match.image,
+    altText: match.altText || `${match.name} Printing`,
+    eyebrow: `CUSTOM ${primaryCat.toUpperCase()} PRINTING`,
+    description: match.description,
+    trustNote: "Custom Specifications • Premium Quality • Bulk Turnaround",
+    productOverview: `${match.name} solutions manufactured by Printopia Solutions according to your custom size, paper stock, GSM, printing side, finishing, and volume requirements. Ideal for ${primaryCat.toLowerCase()} and commercial operations.`,
+    suitableFor: [
+      `${primaryCat} Organizations`,
+      "Commercial Enterprises",
+      "Institutional Clients",
+      "Corporate Office Operations",
+      "High-Volume Retail & B2B"
+    ],
+    features: [
+      { title: "Custom Dimensions", description: "Produced precisely according to your required finished size and format." },
+      { title: "Premium Paper Stocks", description: "Choose from coated art paper, executive bond, textured cards, or synthetic media." },
+      { title: "Vivid Color Printing", description: "High-definition offset and digital printing for crisp text and vivid graphics." },
+      { title: "Custom Finishing Options", description: "Matt/gloss lamination, foil stamping, embossing, die-cutting, or perforation." },
+      { title: "Institutional Branding", description: "Seamless integration of your brand logo, corporate identity, and layout specifications." },
+      { title: "Bulk Volume Discounts", description: "Economical pricing structured for high-capacity institutional and commercial orders." }
+    ],
+    specifications: {
+      productName: match.name,
+      commonSizes: "Standard sizes & Custom dimensions",
+      paperTypes: "Executive Bond, Gloss/Matte Art Paper, Maplitho, PVC / Card Stock",
+      gsmOptions: "80 GSM, 100 GSM, 130 GSM, 250 GSM, 300 GSM, 350 GSM",
+      printing: "Single-sided / Double-sided full color or spot color print",
+      finishing: "Lamination, Die-cutting, Perforation, Numbering, Pad/Book binding",
+      quantity: "Flexible min. order quantities & bulk B2B production"
+    },
+    customizationList: [
+      "Custom logo and brand color matching",
+      "Tailored dimensions and folding layouts",
+      "Multiple GSM and stock selections",
+      "Specialty metallic foil or spot UV accents",
+      "Sequential numbering and barcode/QR printing",
+      "Custom inner pages and grid formats"
+    ],
+    customizationSupportCopy: "Share your specifications, artwork, or sample requirements. Our print specialists will assist in setting up your production layout.",
+    faqItems: [
+      { question: `What are the minimum order quantities for ${match.name}?`, answer: `We offer flexible order quantities suitable for both trial batches and large bulk B2B production runs.` },
+      { question: `Can we customize the paper type and GSM for ${match.name}?`, answer: `Yes, we provide a wide selection of paper types and GSM weights to match your exact institutional standards.` },
+      { question: `How long does production take for ${match.name}?`, answer: `Standard turnaround is typically 3 to 5 business days following final artwork approval, with express options available.` },
+      { question: `How do I request a custom price quote?`, answer: `Submit your required specifications via our online quotation form or WhatsApp us directly for an immediate estimate.` }
+    ]
+  };
+}
 
 interface ProductDetailPageProps {
   onRequestQuote: (productName?: string) => void;
@@ -61,7 +123,7 @@ export default function ProductDetailPage({ onRequestQuote }: ProductDetailPageP
 
   // Retrieve current product based on slug
   const productKey = slug || "report-pad";
-  const product: ProductData | undefined = PRODUCTS_DATA[productKey];
+  const product: ProductData | undefined = PRODUCTS_DATA[productKey] || getDynamicProductData(productKey);
 
   // If the product is not found, we redirect or show a premium 404 block
   useEffect(() => {
@@ -138,7 +200,7 @@ export default function ProductDetailPage({ onRequestQuote }: ProductDetailPageP
             Product Not Found
           </h1>
           <p className="text-sm text-neutral-500 leading-relaxed">
-            The requested healthcare printing product is not available or has been moved.
+            The requested printing product is not available or has been moved.
           </p>
           <Link
             to="/products"

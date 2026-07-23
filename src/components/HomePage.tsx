@@ -61,7 +61,8 @@ export default function HomePage({ onRequestQuote }: HomePageProps) {
       slug: "education",
       title: "Schools & Educational Institutions",
       icon: GraduationCap,
-      image: images.products.idCard,
+      image: images.school.schoolDiary,
+      alt: "School Diary Printing",
       description: "Academic school diaries, PVC student ID cards, mark sheets, graduation certificates, and prospectus booklets.",
       badge: "Academic Printing"
     },
@@ -103,7 +104,7 @@ export default function HomePage({ onRequestQuote }: HomePageProps) {
   const popularSolutions = [
     { name: "Report Pads", category: "Healthcare", image: images.products.reportPad, desc: "Custom medical & diagnostic report pads." },
     { name: "Lab Envelopes", category: "Healthcare", image: images.products.labEnvelope, desc: "Confidential laboratory report envelopes." },
-    { name: "School Diaries", category: "Education", image: images.products.brochure, desc: "Hardbound student planners & handbooks." },
+    { name: "School Diaries", category: "Education", image: images.school.schoolDiary, desc: "Hardbound student planners & handbooks." },
     { name: "Mark Sheets", category: "Education", image: images.products.idCard, desc: "Security printed grade sheets with watermarks." },
     { name: "Certificates", category: "Education", image: images.products.visitingCard, desc: "Prestige graduation certificates with foil." },
     { name: "Visiting Cards", category: "Corporate", image: images.products.visitingCard, desc: "Premium cards with matte, velvet, or spot UV." },
@@ -281,8 +282,8 @@ export default function HomePage({ onRequestQuote }: HomePageProps) {
                     <div className="relative h-44 bg-slate-100 overflow-hidden">
                       <img
                         src={ind.image}
-                        alt={ind.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt={ind.alt || ind.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0C3855]/80 via-transparent to-transparent" />

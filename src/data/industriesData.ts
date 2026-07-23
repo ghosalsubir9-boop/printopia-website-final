@@ -123,101 +123,132 @@ export const INDUSTRIES_DATA: IndustryDetail[] = [
     title: "Schools & Educational Institutions",
     shortTitle: "Education",
     heroHeading: "Customized Printing & Stationery for Schools, Colleges & Universities",
-    heroSubheading: "Comprehensive academic print collateral from school diaries, student ID cards, report cards, and certificates to prospectuses and exam stationery.",
-    introduction: "Printopia Solutions offers end-to-end printing for educational institutions across India. From official student identification cards and embossed graduation certificates to school diaries and prospectus brochures, we deliver institutional excellence.",
+    heroSubheading: "Comprehensive academic print collateral from school diaries, student ID cards, report cards, and certificates to prospectuses and administrative stationery.",
+    introduction: "Printopia Solutions offers end-to-end printing for educational institutions across India. From official student identification cards and embossed graduation certificates to school diaries, letterheads, and prospectus brochures, we deliver institutional excellence.",
     iconName: "graduation-cap",
-    heroImage: images.products.idCard,
+    heroImage: images.school.studentIdCard,
     metaTitle: "School & Educational Institution Printing Services | Printopia Solutions",
-    metaDescription: "High-quality printing solutions for schools, colleges, and educational institutes. School diaries, student ID cards, certificates, report cards, and mark sheets.",
+    metaDescription: "High-quality printing solutions for schools, colleges, and educational institutes. School diaries, student ID cards, certificates, report cards, and prospectuses.",
     products: [
       {
-        id: "school-diaries",
-        name: "School Diaries",
+        id: "school-diary",
+        name: "School Diary",
         description: "Customized student planners and academic handbooks with hardbound or softbound covers, calendar pages, and school rules.",
-        image: images.products.brochure,
+        image: images.school.schoolDiary,
         badge: "Academic Must",
         specifications: ["Hardbound / Perfect binding", "Customized inner grid & layout", "70 GSM Maplitho paper", "Ribbon bookmark option"]
       },
       {
-        id: "student-id-cards",
-        name: "Student ID Cards",
+        id: "student-id-card",
+        name: "Student ID Card",
         description: "High-definition PVC smart ID cards with barcode, QR code integration, and matching printed lanyards.",
-        image: images.products.idCard,
+        image: images.school.studentIdCard,
         badge: "Smart ID",
         specifications: ["Durable 760-micron PVC card", "RFID / Barcode / QR ready", "Gloss / Matte finish", "Printed satin lanyard attached"]
       },
       {
-        id: "report-cards",
-        name: "Report Cards",
+        id: "report-card",
+        name: "Report Card",
         description: "Multi-fold progress report cards with structured grading tables, attendance charts, and teacher feedback panels.",
+        image: images.school.reportCard,
         badge: "Assessment",
         specifications: ["250-300 GSM Art Card", "Creasing and score folding", "Embossed school crest option", "Glossy or matte lamination"]
       },
       {
-        id: "mark-sheets",
-        name: "Mark Sheets",
+        id: "mark-sheet",
+        name: "Mark Sheet",
         description: "Security-printed official grade sheets with anti-copy watermarks, micro-text borders, and hologram positioning.",
+        image: images.school.markSheet,
         badge: "Security Print",
         specifications: ["100-120 GSM Security paper", "Micro-text border print", "UV invisible ink capability", "Official seal watermark"]
       },
       {
-        id: "certificates",
-        name: "Certificates",
+        id: "school-certificate",
+        name: "School Certificate",
         description: "Prestige graduation, achievement, and sports certificates with metallic foil stamping and gold leaf accents.",
+        image: images.school.schoolCertificate,
         badge: "Premium Finish",
         specifications: ["250-300 GSM Parchment / Textured Paper", "Gold / Silver foil stamping", "Custom border filigree", "A4 / Letter sizes"]
       },
       {
-        id: "admission-forms",
-        name: "Admission Forms",
+        id: "admission-form",
+        name: "Admission Form",
         description: "Professional student application and registration forms with attached acknowledgement slips and checklist.",
+        image: images.school.admissionForm,
         badge: "Administrative",
         specifications: ["Single or multi-page formats", "80 GSM smooth paper", "Perforated tear-off slip", "Numbered application tracking"]
       },
       {
-        id: "exercise-books",
-        name: "Exercise Books",
-        description: "Institutional notebooks and workbooks customized with school logos, subject grids, and durable covers.",
-        badge: "Custom Grid",
-        specifications: ["Pin binding or thread sewing", "Custom rule lines (Four line, single line)", "High-whiteness paper", "Laminated cover board"]
-      },
-      {
-        id: "question-papers",
-        name: "Question Papers",
-        description: "Confidential examination question paper printing with strict privacy protocols and tamper-proof packing.",
-        badge: "Confidential",
-        specifications: ["Secure production room printing", "Opaque tamper-evident packing", "Fast turnaround for exams", "Multiple page bookleting"]
-      },
-      {
-        id: "answer-sheets",
-        name: "Answer Sheets",
-        description: "Standardized main and supplementary examination answer booklets with official header boxes and barcoding.",
-        badge: "Exam Station",
-        specifications: ["4, 8, 12, 16, 24-page options", "Stapled binding", "Sequential booklet numbering", "Smooth writing surface"]
-      },
-      {
-        id: "prospectuses",
-        name: "Prospectuses",
+        id: "school-prospectus",
+        name: "School Prospectus",
         description: "High-impact institutional profile booklets highlighting campus infrastructure, faculty, and academic programs.",
-        image: images.products.brochure,
+        image: images.school.schoolProspectus,
         badge: "Admissions CTA",
         specifications: ["130-170 GSM Gloss Art Paper", "Perfect / Saddle-stitch bound", "Full color vivid photography", "Spot UV cover accents"]
       },
       {
-        id: "school-brochures",
-        name: "School Brochures",
+        id: "school-brochure",
+        name: "School Brochure",
         description: "Informative bi-fold and tri-fold promotional pamphlets for admissions outreach and annual events.",
-        image: images.products.brochure,
+        image: images.school.schoolBrochure,
         badge: "Promotional",
         specifications: ["Tri-fold / Bi-fold formats", "170 GSM Art paper", "Crisp fold scoring", "High resolution imagery"]
       },
       {
-        id: "fee-receipt-books",
-        name: "Fee Receipt Books",
+        id: "fee-receipt-book",
+        name: "Fee Receipt Book",
         description: "Official multi-copy fee receipt counterfoil books for school cashiers and administrative record keeping.",
-        image: images.products.billBook,
+        image: images.school.feeReceiptBook,
         badge: "Finance",
         specifications: ["2-part or 3-part carbonless sets", "Perforated counterfoils", "Hardcover protection", "Sequential numbering"]
+      },
+      {
+        id: "school-letterhead",
+        name: "School Letterhead",
+        description: "Official institutional stationery printed on premium executive bond paper for formal school correspondence.",
+        image: images.school.schoolLetterhead,
+        badge: "Official Print",
+        specifications: ["100-120 GSM Executive Bond Paper", "A4 Standard format", "Laser/Inkjet printer friendly", "Crisp logo reproduction"]
+      },
+      {
+        id: "school-envelope",
+        name: "School Envelope",
+        description: "Branded envelopes in DL, C5, and C4 formats with peel & seal adhesive closures for institutional mailing.",
+        image: images.school.schoolEnvelope,
+        badge: "Mailing",
+        specifications: ["100 GSM Executive Maplitho", "DL, C5, C4 sizes", "Peel & seal flap", "Inside security tinting"]
+      },
+      {
+        id: "visitor-pass",
+        name: "Visitor Pass",
+        description: "Security visitor management passes and badges with sequential numbering, clip slots, and campus rules.",
+        image: images.school.visitorPass,
+        badge: "Campus Security",
+        specifications: ["Paper card or PVC badge", "Sequential numbering", "Lanyard / Clip slot", "Perforated counterfoil option"]
+      },
+      {
+        id: "name-badges",
+        name: "Name Badges",
+        description: "Custom metallic, acrylic, and plastic pin or magnetic name badges for teachers, school staff, prefects, and student council members.",
+        image: images.school.nameBadges,
+        badge: "Staff & Council",
+        specifications: ["Metallic aluminum or premium acrylic", "Pin or strong magnetic back attachment", "Full-color printed school crest & staff title", "Durable scratch-resistant clear coating"]
+      },
+      {
+        id: "flyer",
+        name: "Flyer",
+        description: "Vibrant promotional flyers and handbills for admissions campaigns, summer camps, sports coaching, and school event announcements.",
+        image: images.school.flyer,
+        badge: "Admissions & Events",
+        specifications: ["130-170 GSM Gloss / Matte Art Paper", "A4, A5, and DL standard sizes", "Single or double-sided full color print", "Bulk volume distribution ready"]
+      },
+      {
+        id: "school-event-invitation-card",
+        name: "School Event Invitation Card",
+        description: "Elegantly designed invitation cards and matching envelopes for sports day, annual functions, and graduation ceremonies.",
+        image: images.school.schoolEventInvitationCard,
+        badge: "Institutional Events",
+        specifications: ["250-350 GSM Textured / Art Card", "Foil stamping & embossing", "Matching custom envelopes", "Custom event layout"]
       }
     ]
   },
