@@ -118,21 +118,26 @@ export default function Header({ onRequestQuote }: HeaderProps) {
           <button
             id="header-logo-btn"
             onClick={() => handleNavClick('/')}
-            className="flex items-center cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg p-1 -ml-1"
+            className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg p-1 -ml-1 shrink-0"
             aria-label="Printopia Solutions Home"
           >
             <img
               src={images.logo}
-              alt="Printopia Logo"
+              alt="Printopia Solutions Logo"
               width={150}
               height={45}
-              className="w-auto h-[32px] sm:h-[42px] object-contain transition-transform duration-300 group-hover:scale-105"
+              className="w-auto h-[28px] xs:h-[32px] sm:h-[40px] object-contain transition-transform duration-300 group-hover:scale-105 shrink-0"
               loading="eager"
               decoding="async"
               onError={(e) => {
                 e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="45" viewBox="0 0 150 45"><rect width="100%" height="100%" fill="none"/><text x="10" y="28" font-family="sans-serif" font-weight="bold" font-size="16" fill="%23BED7EB">PRINTOPIA</text></svg>';
               }}
             />
+            <div className="flex flex-col justify-center leading-none select-none">
+              <span className="font-display text-xs xs:text-sm sm:text-base md:text-lg font-black tracking-tight text-white whitespace-nowrap group-hover:text-white/90 transition-colors">
+                Printopia <span className="font-semibold text-[#BED7EB]">Solutions</span>
+              </span>
+            </div>
           </button>
 
           {/* Desktop Navigation Links (Center/Right) */}

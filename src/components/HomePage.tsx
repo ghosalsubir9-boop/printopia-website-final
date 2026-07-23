@@ -165,7 +165,7 @@ export default function HomePage({ onRequestQuote }: HomePageProps) {
     <div className="min-h-screen bg-white text-neutral-900 pt-[76px]">
 
       {/* SECTION 1: HOME HERO SECTION */}
-      <section className="relative py-24 sm:py-32 lg:py-36 text-white overflow-hidden bg-slate-950 border-b border-white/10">
+      <section className="relative py-24 sm:py-32 lg:py-36 text-white overflow-hidden bg-[#0C3855] border-b border-white/10">
         {/* Layer 1: Lowest Layer - Background Video / Visual */}
         <video
           autoPlay
@@ -183,10 +183,10 @@ export default function HomePage({ onRequestQuote }: HomePageProps) {
         </video>
 
         {/* Layer 2: Middle Layer - Soft Transparent Gradient Overlay (Darker Left, Light/Transparent Right) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0C3855]/95 via-[#0C3855]/65 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0C3855]/80 via-transparent to-[#0C3855]/40 z-10 pointer-events-none" />
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#BED7EB_1px,transparent_1px)] [background-size:24px_24px] z-10 pointer-events-none" />
-        <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#0C7D8D]/30 rounded-full blur-3xl pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0C3855]/70 via-[#0C3855]/30 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0C3855]/35 via-transparent to-[#0C3855]/15 z-10 pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#BED7EB_1px,transparent_1px)] [background-size:24px_24px] z-10 pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#0C7D8D]/10 rounded-full blur-3xl pointer-events-none z-10" />
 
         {/* Layer 3: Top Layer - Content aligned cleanly on left, keeping right visual area open */}
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-20">
