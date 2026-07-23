@@ -1,0 +1,6 @@
+{
+  "name": "Printopia Solutions",
+  "description": "Premium B2B healthcare printing solutions for hospitals, diagnostic centres, and clinics. Featuring high-precision offset printing, custom medical stationery, and institutional bulk services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

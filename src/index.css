@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom scrollbar styling for a premium look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Base custom classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark-glass-effect {
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee2 40s linear infinite;
+}
+
+/* Background Vector Keyframe Animations */
+@keyframes bgFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes bgDrift {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes bgRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bgRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bgPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsive keyframe adjustments for ultra-subtle movement */
+@media (max-width: 640px) {
+  @keyframes bgFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes bgDrift {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(5px); }
+  }
+}
+
+/* Utility Animation Classes */
+.animate-bg-float {
+  animation: bgFloat 9s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-float-slow {
+  animation: bgFloat 12s ease-in-out infinite 2s;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-drift {
+  animation: bgDrift 11s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-drift-slow {
+  animation: bgDrift 14s ease-in-out infinite 3s;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-rotate {
+  animation: bgRotate 32s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-rotate-reverse {
+  animation: bgRotateReverse 38s linear infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-bg-pulse {
+  animation: bgPulse 8s ease-in-out infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.animate-bg-pulse-delayed {
+  animation: bgPulse 10s ease-in-out infinite 2s;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Ambient Background Keyframes & Utility Classes */
+@keyframes ambientMesh {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.06;
+  }
+  50% {
+    transform: scale(1.08) rotate(2deg);
+    opacity: 0.1;
+  }
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate3d(0px, 0px, 0) scale(1); }
+  50% { transform: translate3d(14px, -18px, 0) scale(1.05); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate3d(0px, 0px, 0) scale(1); }
+  50% { transform: translate3d(-16px, 14px, 0) scale(1.04); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate3d(0px, 0px, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate3d(12px, 16px, 0) scale(1.06); opacity: 1; }
+}
+
+@keyframes blobFloat4 {
+  0%, 100% { transform: translate3d(0px, 0px, 0) scale(1); }
+  50% { transform: translate3d(-14px, -15px, 0) scale(1.05); }
+}
+
+@keyframes blobFloat5 {
+  0%, 100% { transform: translate3d(0px, 0px, 0) scale(1); }
+  50% { transform: translate3d(15px, -12px, 0) scale(1.03); }
+}
+
+@keyframes particleFloat1 {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.3; }
+  50% { transform: translate3d(8px, -14px, 0); opacity: 0.7; }
+}
+
+@keyframes particleFloat2 {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.2; }
+  50% { transform: translate3d(-10px, 12px, 0); opacity: 0.6; }
+}
+
+@keyframes particleFloat3 {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.4; }
+  50% { transform: translate3d(12px, -8px, 0); opacity: 0.8; }
+}
+
+.animate-ambient-mesh {
+  animation: ambientMesh 26s ease-in-out infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.animate-blob-1 {
+  animation: blobFloat1 14s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-blob-2 {
+  animation: blobFloat2 18s ease-in-out infinite 1s;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-blob-3 {
+  animation: blobFloat3 22s ease-in-out infinite 2s;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.animate-blob-4 {
+  animation: blobFloat4 16s ease-in-out infinite 0.5s;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-blob-5 {
+  animation: blobFloat5 20s ease-in-out infinite 1.5s;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.animate-particle-1 {
+  animation: particleFloat1 10s ease-in-out infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.animate-particle-2 {
+  animation: particleFloat2 13s ease-in-out infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.animate-particle-3 {
+  animation: particleFloat3 16s ease-in-out infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-bg-float,
+  .animate-bg-float-slow,
+  .animate-bg-drift,
+  .animate-bg-drift-slow,
+  .animate-bg-rotate,
+  .animate-bg-rotate-reverse,
+  .animate-bg-pulse,
+  .animate-bg-pulse-delayed,
+  .animate-ambient-mesh,
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3,
+  .animate-blob-4,
+  .animate-blob-5,
+  .animate-particle-1,
+  .animate-particle-2,
+  .animate-particle-3 {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
